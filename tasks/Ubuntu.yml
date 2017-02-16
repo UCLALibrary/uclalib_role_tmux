@@ -1,0 +1,7 @@
+---
+
+- name: Install tmux on Ubuntu
+  apt:
+    name: tmux
+    state: present
+    update_cache: yes

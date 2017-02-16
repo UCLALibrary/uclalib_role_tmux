@@ -1,0 +1,11 @@
+---
+
+- name: Create major distro version variable
+  set_fact:
+    os_version_major: "{{ ansible_distribution_version.split('.')[0] }}"
+
+- name: Install tmux on CentOS 7
+  yum:
+    name: tmux
+    state: present
+  when: os_version_major == '7'
