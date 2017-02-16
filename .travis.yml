@@ -12,9 +12,9 @@ services:
 before_install:
   - 'docker pull geerlingguy/docker-${distro}-ansible:latest'
 
+# Assume we've named our GitHub repo the same as our role
 script:
-  - echo $TRAVIS_BUILD_DIR
-  - role_name=uclalib_role_tmux
+  - role_name=${TRAVIS_BUILD_DIR##*/}
   - container_id=$(mktemp)
   - idempotence=$(mktemp)
   - 'docker run --detach --volume="${PWD}":/etc/ansible/roles/${role_name}:ro geerlingguy/docker-${distro}-ansible:latest "${init}" > "${container_id}"'
@@ -25,5 +25,9 @@ script:
   - 'tail ${idempotence} | grep -q "changed=0.*failed=0" && (echo "Idempotence test: passed" && exit 0) || (echo "Idempotence test: failed" && exit 1)'
   - 'tests/validate-results.sh $distro $container_id'
 
-#notifications:
-  # None configured yet
+notifications:
+  email:
+    recipients:
+      - ksclarke@ksclarke.io
+    on_success: change
+    on_failure: change
