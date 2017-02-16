@@ -2,13 +2,13 @@
 
 # Version of the Travis-CI script that we can run locally if we have Docker installed
 
-# Assuming our GitHub repo / directory name is the role name
-PARENT_DIR="$(dirname $(cd `dirname $0` && pwd))"
-ROLE_NAME=${PARENT_DIR##*/}
-
 # Various testing targets
 DISTROS=("centos7" "ubuntu1404")
 INITS=("/sbin/init" "/sbin/init")
+
+# Assuming our GitHub repo / directory name is the role name
+PARENT_DIR="$(dirname $(cd `dirname $0` && pwd))"
+ROLE_NAME=${PARENT_DIR##*/}
 
 # Color hints for alerts and messages
 GREEN='\033[1;32m'
