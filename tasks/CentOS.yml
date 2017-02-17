@@ -4,8 +4,8 @@
   set_fact:
     os_version_major: "{{ ansible_distribution_version.split('.')[0] }}"
 
-- name: Install tmux on CentOS 7
+- name: Install tmux
   yum:
     name: tmux
     state: present
-  when: os_version_major == '7'
+  when: os_version_major == '7' or os_version_major == '6'

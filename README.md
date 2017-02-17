@@ -5,7 +5,7 @@ Ansible role to install tmux.
 Requirements
 ------------
 
-This role requires Ansible 1.8 or higher.
+This role requires Ansible 2.2 or higher.
 
 Role Variables
 --------------

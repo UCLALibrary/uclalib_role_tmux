@@ -3,7 +3,7 @@ galaxy_info:
   author: Kevin S. Clarke
   description: Installs tmux
   license: BSD 3-Clause
-  min_ansible_version: 1.8
+  min_ansible_version: 2.2
   platforms:
   - name: EL
     versions:

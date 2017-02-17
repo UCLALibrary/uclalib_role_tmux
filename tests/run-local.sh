@@ -3,8 +3,8 @@
 # Version of the Travis-CI script that we can run locally if we have Docker installed
 
 # Various testing targets
-DISTROS=("centos7" "ubuntu1404")
-INITS=("/sbin/init" "/sbin/init")
+DISTROS=("centos6" "centos7" "ubuntu1404")
+INITS=("/sbin/init" "/sbin/init" "/sbin/init")
 
 # Assuming our GitHub repo / directory name is the role name
 PARENT_DIR="$(dirname $(cd `dirname $0` && pwd))"
@@ -27,7 +27,7 @@ die () {
   echo "    docker rm -f \$(docker ps -a -q)"
   echo ""
 
-  exit $?
+  exit 1
 }
 
 # Our tests need Docker installed
