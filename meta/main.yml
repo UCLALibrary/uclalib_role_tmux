@@ -12,8 +12,7 @@ galaxy_info:
   - name: Ubuntu
     versions:
     - trusty
-  #  - utopic
-  #  - vivid
+    - xenial
   galaxy_tags:
     - system
 dependencies: []

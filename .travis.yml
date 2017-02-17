@@ -6,6 +6,7 @@ env:
   - distro=centos6 init=/sbin/init
   - distro=centos7 init=/sbin/init
   - distro=ubuntu1404 init=/sbin/init
+  - distro=ubuntu1604 init=/sbin/init
 
 services:
   - docker

@@ -26,7 +26,7 @@ die () {
 # Validation tests that are specific to a particular distro
 if [ "$1" == "centos7" ] || [ "$1" == "centos6" ]; then
   docker exec --tty "$(cat ${2})" env TERM=xterm yum list installed tmux || die "$2" "$?"
-elif [ "$1" == "ubuntu1404" ]; then
+elif [ "$1" == "ubuntu1404" ] || [ "ubuntu1604" ]; then
   docker exec --tty "$(cat ${2})" env TERM=xterm test $(dpkg-query -W -f='${Status}' tmux 2>/dev/null | grep -c "ok installed") != 0 || die "$2" "$?"
 else
   echo "Unexpected distro value: ${1}"; exit 1
