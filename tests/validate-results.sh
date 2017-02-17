@@ -31,3 +31,5 @@ elif [ "$1" == "ubuntu1404" ]; then
 else
   echo "Unexpected distro value: ${1}"; exit 1
 fi
+
+printf "${GREEN}Tests ran successfully!${NC}\n"

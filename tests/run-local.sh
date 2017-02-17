@@ -50,7 +50,7 @@ for ((INDEX = 0; INDEX < ${#DISTROS[@]}; INDEX++)); do
   tail ${IDEMPOTENCE} | grep -q "changed=0.*failed=0" && (echo "Idempotence test: passed" && exit 0) || (echo "Idempotence test: failed" && die "$CONTAINER_ID")
 
   # Tests specific to this role
-  source tests/validate.sh "${DISTRO}"
+  source tests/validate-results.sh "${DISTRO}" "${CONTAINER_ID}"
 
   # Some hints about what to do with the test resources
   echo ""
