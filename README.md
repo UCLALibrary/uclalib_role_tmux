@@ -2,6 +2,8 @@
 
 Ansible role to install tmux.
 
+**Note:** This role is no longer being developed or maintained so the repo has been archived.
+
 Requirements
 ------------
 
